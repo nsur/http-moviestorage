@@ -58,6 +58,9 @@ class Controller {
 		}
 		$this->redirect("/");
 	}
+	public function aboutAction() {
+		$this->getView()->about();
+	}
 	public function notFoundAction() {
 		$this->getView()->notFound();
 	}

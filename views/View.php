@@ -17,7 +17,12 @@ class View {
 		include ROOT.'/views/tpl/show.php';
 	}
 	public function upload() {
+		$sampleContent = file_get_contents(ROOT.'/sample_movies.txt');
+		$this->sample = !empty($sampleContent) ? '<pre>'.$sampleContent.'</pre>' : '';
 		include ROOT.'/views/tpl/upload.php';
+	}
+	public function about() {
+		include ROOT.'/views/tpl/about.php';
 	}
 	public function notFound() {
 		include ROOT.'/views/tpl/404.php';

@@ -5,6 +5,7 @@ return  array(
 	'movie\/edit\/?(\d+)?' => 'edit',
 	'movie\/delete\/(\d+)' => 'delete',
 	'upload' => 'upload',
+	'about' => 'about',
 	'upload_request' => 'uploadRequest',
 	'save_request' => 'saveRequest',
 	'\?s=([^&]*)' => 'index',

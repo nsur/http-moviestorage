@@ -10,7 +10,7 @@
 </head>
 <body>
 <header>
-	<nav class="navbar navbar-default header">
+	<nav class="navbar navbar-default navbar-fixed-top header">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nb_collapse" aria-expanded="false">
@@ -21,10 +21,27 @@
 				</button>
 				<a class="navbar-brand" href="/">MovieStorage</a>
 			</div>
-			<ul class="nav navbar-nav">
-				<li><a href="/movie/edit">Add Movie</a></li>
-				<li><a href="/upload">Upload Movies</a></li>
-			</ul>
+			<div class="collapse navbar-collapse" id="nb_collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="/movie/edit">Add Movie</a></li>
+					<li><a href="/upload">Upload Movies</a></li>
+					<li><a href="/about">About</a></li>
+				</ul>
+			</div>
+			<div class="row">
+				<div class="col-md-12 col-xs-12">
+					<form name="search-form" action="/" method="get" class="searchForm card card-sm">
+						<div class="card-body row no-gutters align-items-center">
+							<div class="form-group col-md-10">
+								<input type="search" name="s" value="<?php echo $_GET['s'] ?>" class="form-control" placeholder="Search movies by title or stars">
+							</div>
+							<div class="form-group col-md-2">
+								<button type="submit" class="btn btn-secondary">Search</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
 		</div>
 	</nav>
 </header>

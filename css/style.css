@@ -5,6 +5,13 @@ html {
 body {
 	position: relative;
 	min-height: 100%;
+	padding-top: 120px;
+}
+form input, form button {
+	width: 100%;
+}
+.site-content {
+	padding-bottom: 60px;
 }
 .footer {
 	position: absolute;
@@ -15,12 +22,8 @@ body {
 	background-color: #efefef;
 	text-align: center;
 }
-.site-content {
-	padding-bottom: 60px;
-}
-.searchForm {
-	margin-bottom: 20px;
-}
-.searchForm input, .searchForm button {
-	width: 100%;
+@media only screen and (max-width:991px) {
+	body {
+		padding-top: 170px;
+	}
 }
