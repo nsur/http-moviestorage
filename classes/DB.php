@@ -13,9 +13,13 @@ class DB {
 		$this->database = $database;
 	}
 
-	public function dbConnect() {
+	public function dbConnect($install = false) {
 		if(empty($this->mysql)) {
-			$this->mysql = mysqli_connect($this->host, $this->user, $this->password, $this->database);
+			if(!empty($install)) {
+				$this->mysql = mysqli_connect($this->host, $this->user, $this->password);
+			} else {
+				$this->mysql = mysqli_connect($this->host, $this->user, $this->password, $this->database);
+			}
 			if(empty($this->mysql)) {
 				throw new Exception(mysqli_error($this->mysql));
 			}
@@ -104,7 +108,7 @@ LIMIT 1");
 
 	public function install() {
 		try {
-			$this->dbConnect();
+			$this->dbConnect(true);
 			$this->dbQuery("CREATE DATABASE IF NOT EXISTS ".$this->database);
 			$this->dbQuery("USE ".$this->database);
 			if(!$this->dbCheckTableExists('movies')) {
